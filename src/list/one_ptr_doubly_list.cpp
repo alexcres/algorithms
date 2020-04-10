@@ -1,0 +1,91 @@
+#include <cstdint>
+#include "one_ptr_doubly_list.h"
+
+using Node = one_ptr_doubly_list::node;
+
+one_ptr_doubly_list::node::node(int data) :
+	data{data} {}
+
+void one_ptr_doubly_list::push_head(int data) {
+	node *node{new struct node(data)};
+	if (length > 0) {
+		head->neighbor = xor_neighbor(node, head_next);
+		node->neighbor = head;
+		head_next = head;
+		head = node;
+	} else {
+		head = node;
+	}
+	++length;
+}
+
+std::pair<Node *, Node *> one_ptr_doubly_list::find(int data) {
+	auto result = head;
+	auto resultNext = head_next;
+	while (result && result->data != data) {
+		auto temp = result;
+		result = resultNext;
+		if (resultNext)
+			resultNext = xor_neighbor(temp, resultNext->neighbor);
+	}
+	return std::pair(result, resultNext);
+}
+
+Node *one_ptr_doubly_list::xor_neighbor(node *&prev, node *&next) {
+	return (node *) ((uintptr_t) prev ^ (uintptr_t) next);
+}
+
+void one_ptr_doubly_list::remove(std::pair<node *, node *> nodes) {
+	auto cur = nodes.first;
+	auto next = nodes.second;
+
+	// test needs to consider: cur, next; head, head_next
+	if (cur) {
+		auto prev = get_prev(nodes);
+
+		// cur always exist
+		// next relate to cur closely
+		// cur doesn't have relation with head or head_next.
+		// do elimination test is simpler. eliminate next first.
+		if (!next) {// cur is at the end
+			if (cur == head) {
+				head = nullptr;
+			} else if (cur == head_next) {
+				head_next = nullptr;
+			} else {
+				auto prevPrev = get_prev(std::pair(prev, cur));
+				prev->neighbor = prevPrev;
+			}
+		} else {
+			auto nextNext = xor_neighbor(next->neighbor, cur);
+			next->neighbor = xor_neighbor(prev, nextNext);
+			if (prev) { // cur and next in the middle
+				auto prevPrev = get_prev(std::pair(prev, cur));
+				prev->neighbor = xor_neighbor(prevPrev, next);
+				if (cur == head_next) head_next = next;
+			} else { // cur is the head, next is the head_next
+				head = next;
+				head_next = nextNext;
+			}
+		}
+
+		delete cur;
+		--length;
+	}
+}
+
+one_ptr_doubly_list::~one_ptr_doubly_list() {
+	if (length != 0) {
+		auto cur = head;
+		auto next = head_next;
+		while (head) {
+			if (head_next)
+				next = xor_neighbor(head_next->neighbor, cur);
+			cur = head_next;
+			delete head;
+			--length;
+			head = cur;
+			head_next = next;
+		}
+	}
+}
