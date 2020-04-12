@@ -2,12 +2,12 @@
 
 // universal hash
 int hash_table::hash(int data) {
-	// ((a*data + b)%p)%slots
+	// ((a*id + b)%p)%slots
 	// a and b, need to be less than p to make sure relative prime to p
 	// b needs to be bigger than 0, to make sure result is prime before %p
-	//      randomize index for data
-	//      make sure data is prime to 29
-	// data could be n*29
+	//      randomize index for id
+	//      make sure id is prime to 29
+	// id could be n*29
 	return ((28 * data + 1) % 29) % 26;
 	// ------randomize---
 }

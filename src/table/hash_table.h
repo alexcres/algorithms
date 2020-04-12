@@ -3,7 +3,7 @@
 
 
 class hash_table {
-	// data is 1 to 26
+	// id is 1 to 26
 	int *table{new int[26]{0}};
 
 	static int hash(int data);

@@ -58,7 +58,7 @@ void multi_memory::compactify(doubly_list obj_list, doubly_list free_list) {
 	++i;
 	free_head = i; // update head
 	l = objL + free_list.get_length();
-	// ignore next and data
+	// ignore next and id
 	while (i < l) {
 		next[i] = i + 1;
 		++i;

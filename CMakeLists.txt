@@ -43,7 +43,7 @@ add_library(
 	src/table/direct_list.h
 	src/table/hash_table.cpp
 	src/table/hash_table.h
-	src/tree/rb_tree.cpp src/tree/rb_tree.h src/math/math.cpp src/math/math.h src/tree/b_tree.cpp src/tree/b_tree.h src/graph/adjacency_list.cpp src/graph/adjacency_list.h)
+	src/tree/rb_tree.cpp src/tree/rb_tree.h src/math/math.cpp src/math/math.h src/tree/b_tree.cpp src/tree/b_tree.h src/graph/adjacency_list.cpp src/graph/adjacency_list.h src/graph/adjacency_matrix.cpp src/graph/adjacency_matrix.h)
 set_target_properties(algorithms PROPERTIES LINKER_LANGUAGE CXX)
 
 target_include_directories(
