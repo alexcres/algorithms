@@ -1,3 +1,5 @@
+#include <queue>
+#include <iostream>
 #include "adjacency_list.h"
 #include "adjacency_matrix.h"
 
@@ -106,6 +108,100 @@ void adjacency_list::clean() {
 				next = cur->next;
 		}
 	}
+}
+
+void adjacency_list::bfs(int index) {
+	// its important to reset, might need different index bfs
+	for (int i = 0; i < n; ++i) {
+		auto v = vertices[i];
+		v->color = color::white;
+		v->parent = nullptr;
+		v->distance_to_root = infinite;
+	}
+	auto root = vertices[index];
+	root->distance_to_root = 0;
+	std::queue<vertex*> q;
+	q.push(root);
+	while (!q.empty()) {
+		auto cur = q.front();
+		q.pop();
+		auto next = cur->next;
+		while(next) {
+			auto real_next = vertices[next->id];
+			if (real_next->color == color::white) {
+				real_next->color = color::gray;
+				// distance is always shortlest cause on each visit
+				// the cloest, which are neighbours are visited once
+				// for weighted graph, change list to binary_search_tree to make sure shortest path
+				real_next->distance_to_root = cur->distance_to_root + 1;
+				real_next->parent = cur;
+				q.push(real_next); // q.front is always in vertices
+			}
+			next = next->next;
+		}
+		cur->color = color::black;
+	}
+} // O(v), only white get pushed into queue, there are v whites
+
+void adjacency_list::print_path(int from, int to) const {
+	if (from != to) {
+		auto parent = vertices[from]->parent;
+		if (parent) {
+			std::cout << parent->id << std::endl;
+			print_path(parent->id, to);
+		} else {
+			std::cout << "no path from " << from << " to " << to << " exists" << std::endl;
+		}
+	} else {
+		std::cout << "done" << std::endl;
+	}
+}
+
+/* let diameter be (a,b)
+ * run bfs(x), get a or b
+ * run bfs(a or b), get b or a
+ * */
+// O(v)
+int adjacency_list::diameter() {
+	bfs(0);
+	int max = 0;
+	int max_id = 0;
+	for (int i = 0; i < n; ++i) {
+		auto v = vertices[i];
+		if (v->distance_to_root > max) {
+			max = v->distance_to_root;
+			max_id = v->id;
+		}
+	}
+	bfs(max_id);
+	max = 0;
+	for (int i = 0; i < n; ++i) {
+		auto v = vertices[i];
+		if (v->distance_to_root > max) {
+			max = v->distance_to_root;
+		}
+	}
+	return max;
+}
+
+// draw the bfs produced tree for better understanding
+void adjacency_list::visit_sub_tree(int index, edges& edges) {
+	auto parent = vertices[index];
+	auto next = parent->next;
+	while (next) {
+		if (parent->distance_to_root + 1 == vertices[next->id]->distance_to_root) {
+			edges.push_back({parent->id, next->id});
+			visit_sub_tree(next->id, edges);
+		}
+		next = next->next;
+	}
+}
+
+adjacency_list::edges adjacency_list::visit_edges(int index) {
+	bfs(index);
+	edges e;
+	visit_sub_tree(index, e);
+	return e;
 }
 
 
