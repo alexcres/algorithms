@@ -1,6 +1,4 @@
-#ifndef ALGORITHMS_SIBLING_TREE_H
-#define ALGORITHMS_SIBLING_TREE_H
-
+#pragma once
 
 class sibling_tree {
 public:
@@ -17,6 +15,3 @@ public:
 private:
 	node *root;
 };
-
-
-#endif //ALGORITHMS_SIBLING_TREE_H

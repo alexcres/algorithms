@@ -1,6 +1,4 @@
-#ifndef ALGORITHMS_MATH_H
-#define ALGORITHMS_MATH_H
-
+#pragma once
 
 class math {
 public:
@@ -10,6 +8,3 @@ public:
 	// least common denominator
 	static int lcd(int a, int b);
 };
-
-
-#endif //ALGORITHMS_MATH_H

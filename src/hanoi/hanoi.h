@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_HANOI_H
-#define ALGORITHMS_HANOI_H
+#pragma once
 
 #include <iostream>
 //#include <math/math.h>
@@ -8,12 +7,12 @@
 
 using namespace std;
 
-enum color { yellow, purple, orange, blue };
+enum Color { yellow, purple, orange, blue };
 
 
 class cube {
 	public:
-		explicit cube(double length, enum color color);
+		explicit cube(double length, enum Color color);
 
 		double get_volume();
 
@@ -27,7 +26,7 @@ class cube {
 
 	private:
 		double length;
-		enum color color;
+		enum Color color;
 };
 
 class stack {
@@ -101,13 +100,13 @@ hanoi::hanoi() {
 		stack stack;
 		stacks.push_back(stack);
 	}
-	cube blue(4, color::blue);
+	cube blue(4, Color::blue);
 	stacks[0].push_back(blue);
-	cube orange(3, color::orange);
+	cube orange(3, Color::orange);
 	stacks[0].push_back(orange);
-	cube purple(2, color::purple);
+	cube purple(2, Color::purple);
 	stacks[0].push_back(purple);
-	cube yellow(1, color::yellow);
+	cube yellow(1, Color::yellow);
 	stacks[0].push_back(yellow);
 }
 
@@ -198,7 +197,4 @@ double cube::get_length() const {
 	return length;
 }
 
-cube::cube(double length, enum color color) : length{length}, color{color} {}
-
-
-#endif //ALGORITHMS_HANOI_H
+cube::cube(double length, enum Color color) : length{length}, color{color} {}

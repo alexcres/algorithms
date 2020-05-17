@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_RB_TREE_H
-#define ALGORITHMS_RB_TREE_H
+#pragma once
 
 // todo: test
 /* Properties that must hold
@@ -52,6 +51,3 @@ class rb_tree {
 		node* nil{new node(0, color::black)};
 		node* root{nil};
 };
-
-
-#endif //ALGORITHMS_RB_TREE_H

@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_BIT_VECTOR_H
-#define ALGORITHMS_BIT_VECTOR_H
+#pragma once
 
 #include <bitset>
 
@@ -15,5 +14,3 @@ public:
 private:
 	std::bitset<100> bits;
 };
-
-#endif //ALGORITHMS_BIT_VECTOR_H

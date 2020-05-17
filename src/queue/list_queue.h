@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_LIST_QUEUE_H
-#define ALGORITHMS_LIST_QUEUE_H
+#pragma once
 
 #include <memory>
 
@@ -25,5 +24,3 @@ private:
 	node *tail{nullptr};
 	int length{0};
 };
-
-#endif //ALGORITHMS_LIST_QUEUE_H

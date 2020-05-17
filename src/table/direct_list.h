@@ -1,6 +1,4 @@
-#ifndef ALGORITHMS_DIRECT_LIST_H
-#define ALGORITHMS_DIRECT_LIST_H
-
+#pragma once
 
 #include <vector>
 #include <list/doubly_list.h>
@@ -16,6 +14,3 @@ public:
 private:
 	std::vector<doubly_list::node *> table;
 };
-
-
-#endif //ALGORITHMS_DIRECT_LIST_H

@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_BINARY_TREE_H
-#define ALGORITHMS_BINARY_TREE_H
+#pragma once
 
 // todo: test
 class binary_tree {
@@ -58,6 +57,3 @@ private:
 	node *root{nullptr};
 	int length{0};
 };
-
-
-#endif //ALGORITHMS_BINARY_TREE_H

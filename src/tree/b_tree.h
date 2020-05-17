@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_B_TREE_H
-#define ALGORITHMS_B_TREE_H
+#pragma once
 
 // it's a type of self-balanced tree: all leaves appear in the same level
 
@@ -36,6 +35,3 @@ class b_tree {
 
 		static void clear(node* target);
 };
-
-
-#endif //ALGORITHMS_B_TREE_H

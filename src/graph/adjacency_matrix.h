@@ -1,6 +1,4 @@
-#ifndef ALGORITHMS_ADJACENCY_MATRIX_H
-#define ALGORITHMS_ADJACENCY_MATRIX_H
-
+#pragma once
 
 #include <vector>
 #include <array>
@@ -26,6 +24,3 @@ class adjacency_matrix {
 		[[nodiscard]] int get_column(int index) const;
 
 };
-
-
-#endif //ALGORITHMS_ADJACENCY_MATRIX_H

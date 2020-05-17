@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_TWO_STACK_QUEUE_H
-#define ALGORITHMS_TWO_STACK_QUEUE_H
+#pragma once
 
 #include "../stack/array_stack.h"
 
@@ -17,5 +16,3 @@ private:
 	array_stack<int> out_stack;
 	int length{0};
 };
-
-#endif //ALGORITHMS_TWO_STACK_QUEUE_H

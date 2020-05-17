@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_TWO_STACK_ARRAY_H
-#define ALGORITHMS_TWO_STACK_ARRAY_H
+#pragma once
 
 // 10.1-2
 // implement two stacks in one array
@@ -23,5 +22,3 @@ private:
 	int left_offset;
 	int right_offset;
 };
-
-#endif //ALGORITHMS_TWO_STACK_ARRAY_H

@@ -1,0 +1,41 @@
+target: P, size: m
+accept: A, size: 26
+
+Construct Function
+columns: distinct char appears in 4P
+rows: states, 0..m
+   a b c d ...
+0
+1
+2
+...
+
+table = [m+1][26](0)
+table[0][A[0]] = 1
+for s, 1...m+1
+   for a, 0...26
+      // get state, using previous char
+      pre_char = P[s-1]
+      pre = A[pre_char]
+      state = table[s-1][pre]
+
+      sub = P[0..s]
+      for i, s..0
+         if sub[s-i..s] == P[0..i]
+            cur = A[a]
+            table[s][cur] = state + 1 - (s-i)
+            break
+return table
+
+initialize table with m+1 rows, 26 columns
+find position of first char in table, set it to one
+for each row
+   for each column
+      get state
+      get substring
+      for row index to 0, diff as the start of substring
+         if substring[diff to end] equals pattern[0 to index]
+            calculate state. increment state by 1, minues diff
+            save state in table
+            break
+return table

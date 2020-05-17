@@ -1,0 +1,24 @@
+Key: division is inaccurate
+Philosophy: y/x can solve them all, substitute it with cross operation, which can solve them all.
+            if one way can solve them all, there is another way to solve them all.
+
+Convex Combination
+AB, AC, what is AD(D is a point between line BC)?
+// prove using vector arithmetics
+AD = a * AB + (1-a) * AC
+
+Cross Product
+AB: (Xb - Xa, Yb - Ya)
+AC: (Xc - Xa, Yc - Ya)
+AB X AC = (Xb - Xa) * (Yc - Ya) - (Xc - Xa) * (Yb - Ya)
+
+Direction
+clockwise if cross is positive
+
+Turn Direction
+AB, BC
+AB X AC, positive means turn right
+
+Intersection
+Direction
+OnSegment

@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_ARRAY_QUEUE_H
-#define ALGORITHMS_ARRAY_QUEUE_H
+#pragma once
 
 class array_queue {
 public:
@@ -24,5 +23,3 @@ private:
 
 	void resize(int new_cap);
 };
-
-#endif //ALGORITHMS_ARRAY_QUEUE_H

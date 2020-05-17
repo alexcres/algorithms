@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_ARRAY_DEQUE_H
-#define ALGORITHMS_ARRAY_DEQUE_H
+#pragma once
 
 #include <memory>
 // 10.1-5
@@ -30,5 +29,3 @@ private:
 
 	void resize(int newCap);
 };
-
-#endif //ALGORITHMS_ARRAY_DEQUE_H

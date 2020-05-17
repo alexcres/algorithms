@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_LIST_STACK_H
-#define ALGORITHMS_LIST_STACK_H
+#pragma once
 
 #include "stackable.h"
 #include <stdexcept>
@@ -59,5 +58,3 @@ template<typename Data>
 inline bool list_stack<Data>::is_empty() const {
 	return head == nullptr;
 }
-
-#endif //ALGORITHMS_LISData_SDataACK_H

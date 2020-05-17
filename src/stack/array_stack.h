@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_ARRAY_STACK_H
-#define ALGORITHMS_ARRAY_STACK_H
+#pragma once
 
 #include <stdexcept>
 #include "stackable.h"
@@ -64,5 +63,3 @@ void array_stack<E>::resize(int new_size) {
 	stack = temp;
 	capacity = new_size;
 }
-
-#endif //ALGORITHMS_STACK_H

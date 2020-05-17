@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_SINGLE_MEMORY_H
-#define ALGORITHMS_SINGLE_MEMORY_H
+#pragma once
 
 // 10.3-2
 // useful for hetero obj
@@ -18,6 +17,3 @@ private:
 	int *memory; // memory[3n] are pointers in real program
 	int free_head = 1; // pointer in real program
 };
-
-
-#endif //ALGORITHMS_SINGLE_MEMORY_H

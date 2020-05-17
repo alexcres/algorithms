@@ -1,6 +1,4 @@
-#ifndef ALGORITHMS_STACK_MEMORY_H
-#define ALGORITHMS_STACK_MEMORY_H
-
+#pragma once
 
 #include "../stack/array_stack.h"
 
@@ -15,6 +13,3 @@ private:
 	array_stack<int> memory;
 	int capacity;
 };
-
-
-#endif //ALGORITHMS_STACK_MEMORY_H

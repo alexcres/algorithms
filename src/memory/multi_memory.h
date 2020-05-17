@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_MULTI_MEMORY_H
-#define ALGORITHMS_MULTI_MEMORY_H
+#pragma once
 
 #include "../list/doubly_list.h"
 
@@ -27,6 +26,3 @@ private:
 	int *prev;
 	int free_head{1};
 };
-
-
-#endif //ALGORITHMS_MULTI_MEMORY_H

@@ -1,6 +1,4 @@
-#ifndef ALGORITHMS_TWO_QUEUE_STACK_H
-#define ALGORITHMS_TWO_QUEUE_STACK_H
-
+#pragma once
 
 #include "../queue/array_queue.h"
 // 10.1-7
@@ -17,6 +15,3 @@ private:
 	array_queue queue_b;
 	int length;
 };
-
-
-#endif //ALGORITHMS_TWO_QUEUE_STACK_H

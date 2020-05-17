@@ -1,0 +1,8 @@
+Keypoint: surfix, don't go through surfix again
+
+Preprocessing example:
+012345678
+aabaabaaa
+010123452
+
+if cur not matching, jump pattern to pre_num, then continue

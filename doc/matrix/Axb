@@ -1,0 +1,26 @@
+Ax=b
+
+2 1 7 21 a 71
+3 4 8 34 b 84
+4 3 3 43 c 33
+         d
+
+71     2     1
+84 = a 3 + b 4 ...
+33     4     3
+
+a    0      10
+b =  1  + x 1
+c    10     0
+d    0      -1
+
+X = Xp + N
+solutions = solution + null_space(N)
+NA = 0
+0 + solution = solution
+just like in (x, y) vector
+e.g. y - 2x = 1
+x = 1 + x 1
+y   3     2
+NA: think of it as a plane perpendicular to another plane
+    A cuts N at any point is a solution

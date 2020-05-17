@@ -1,33 +1,31 @@
-#ifndef ALGORITHMS_SINGLY_LIST_H
-#define ALGORITHMS_SINGLY_LIST_H
-
+#pragma once
 
 class singly_list {
 public:
 	struct node {
 		int data;
-		node *next{nullptr};
+		node* next{nullptr};
 
 		explicit node(int data);
 	};
 
 	~singly_list();
 
-	void insert_head(node *&node);
+	void insert_head(node*& node);
 
 	void push_head(int data);
 
 	// node->next is the target
-	[[nodiscard]] node *find(int data) const;
+	[[nodiscard]] node* find(int data) const;
 
-	void remove(node *&cur); // O(1)
+	void remove(node*& cur); // O(1)
 
-	int peek(int index=0);
+	int peek(int index = 0);
 
 	void reverse();
 
 private:
-	node *head{nullptr};
+	node* head{nullptr};
 	int length{0};
 };
 
@@ -37,5 +35,3 @@ private:
  * h1->next = h2->next;
  * h2->next = temp;
  */
-
-#endif //ALGORITHMS_SINGLY_LIST_H

@@ -1,5 +1,5 @@
-#ifndef ALGORITHMS_STACKABLE_H
-#define ALGORITHMS_STACKABLE_H
+#pragma once
+
 template<typename E>
 class stackable {
 public:
@@ -15,4 +15,3 @@ public:
 	virtual ~stackable() = default;
 
 };
-#endif //ALGORITHMS_STACKABLE_H

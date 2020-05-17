@@ -1,6 +1,4 @@
-#ifndef ALGORITHMS_HASHTABLE_H
-#define ALGORITHMS_HASHTABLE_H
-
+#pragma once
 
 class hash_table {
 	// id is 1 to 26
@@ -17,6 +15,3 @@ public:
 
 	void remove(int data);
 };
-
-
-#endif //ALGORITHMS_HASHTABLE_H

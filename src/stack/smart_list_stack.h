@@ -1,5 +1,4 @@
-#ifndef ALGORITHMS_SMARTListStack_H
-#define ALGORITHMS_SMARTListStack_H
+#pragma once
 
 #include "stackable.h"
 #include <stdexcept>
@@ -52,5 +51,3 @@ Data smart_list_stack<Data>::pop() {
 	head = std::move(head->next);
 	return data;
 }
-
-#endif //ALGORITHMS_SMARTSmartListStack_HXX
