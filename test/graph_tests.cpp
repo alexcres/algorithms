@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
-#include <graph/adjacency_matrix.h>
-#include "../src/graph/adjacency_list.h"
+#include <graph/AdjacencyMatrix.hpp>
+#include "../src/graph/AdjacencyList.hpp"
 
 // figure 22.2, 0-5 instead of 1-6
 TEST(graph_test, adjacency_list_test) {
-	adjacency_list graph(6);
+	AdjacencyList graph(6);
 	graph.add_edge(0, 1);
 	graph.add_edge(0, 3);
 	graph.add_edge(1, 4);
@@ -33,7 +33,7 @@ TEST(graph_test, adjacency_list_test) {
 
 
 TEST(graph_test, adjacency_matrix_test) {
-	adjacency_matrix graph(6);
+	AdjacencyMatrix graph(6);
 	graph.add_edge(0, 1);
 	graph.add_edge(0, 3);
 	graph.add_edge(1, 4);

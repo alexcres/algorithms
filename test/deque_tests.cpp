@@ -1,10 +1,10 @@
 #include "gtest/gtest.h"
-#include "../src/deque/array_deque.h"
+#include "../src/deque/ArrayDeque.hpp"
 
 using namespace std;
 
 TEST(deque_test, array_deque) {
-	array_deque deque;
+	ArrayDeque deque;
 	for (int i = 0; i < 4; ++i) {
 		// test resize
 		deque.push_head(i+1);

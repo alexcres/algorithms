@@ -1,10 +1,10 @@
 #include "gtest/gtest.h"
-#include "../src/queue/list_queue.h"
-#include "../src/queue/array_queue.h"
-#include "../src/queue/two_stack_queue.h"
+#include "../src/queue/ListQueue.hpp"
+#include "../src/queue/ArrayQueue.hpp"
+#include "../src/queue/TwoStackQueue.hpp"
 
 TEST(QueueTest, list_queue) {
-	list_queue queue;
+	ListQueue queue;
 	for (int i = 0; i < 4; ++i) {
 		queue.enqueue(i);
 	}
@@ -21,7 +21,7 @@ TEST(QueueTest, list_queue) {
 }
 
 TEST(QueueTest, array_queue) {
-	array_queue queue;
+	ArrayQueue queue;
 	for (int i = 0; i < 4; ++i) {
 		queue.enqueue(i);
 	}
@@ -44,7 +44,7 @@ TEST(QueueTest, array_queue) {
 }
 
 TEST(QueueTest, two_stack_queue) {
-	two_stack_queue queue;
+	TwoStackQueue queue;
 	for (int i = 0; i < 4; ++i) {
 		queue.enqueue(i);
 	}

@@ -4,46 +4,46 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_library(
 	algorithms
-	src/stack/list_stack.h
-	src/stack/smart_list_stack.h
-	src/stack/array_stack.h
-	src/stack/stackable.h
-	src/util.h
-	src/queue/list_queue.h
-	src/queue/array_queue.h
-	src/queue/list_queue.cpp
-	src/queue/array_queue.cpp
-	src/stack/two_stack_array.cpp
-	src/stack/two_stack_array.h
-	src/deque/array_deque.cpp
-	src/deque/array_deque.h
-	src/queue/two_stack_queue.cpp
-	src/queue/two_stack_queue.h
-	src/stack/two_queue_stack.cpp
-	src/stack/two_queue_stack.h
-	src/list/doubly_list.cpp
-	src/list/doubly_list.h
-	src/list/singly_list.cpp
-	src/list/singly_list.h
-	src/list/one_ptr_doubly_list.cpp
-	src/list/one_ptr_doubly_list.h
-	src/memory/multi_memory.cpp
-	src/memory/multi_memory.h
-	src/memory/single_memory.cpp
-	src/memory/single_memory.h
-	src/memory/stack_memory.cpp
-	src/memory/stack_memory.h
-	src/tree/binary_tree.cpp
-	src/tree/binary_tree.h
-	src/tree/sibling_tree.cpp
-	src/tree/sibling_tree.h
-	src/table/bit_vector.cpp
-	src/table/bit_vector.h
-	src/table/direct_list.cpp
-	src/table/direct_list.h
-	src/table/hash_table.cpp
-	src/table/hash_table.h
-	src/tree/rb_tree.cpp src/tree/rb_tree.h src/math/math.cpp src/math/math.h src/tree/b_tree.cpp src/tree/b_tree.h src/graph/adjacency_list.cpp src/graph/adjacency_list.h src/graph/adjacency_matrix.cpp src/graph/adjacency_matrix.h src/graph/adjv.cpp src/graph/adjv.h)
+	src/stack/ListStack.hpp
+	src/stack/SmartListStack.hpp
+	src/stack/ArrayStack.hpp
+	src/stack/Stackable.hpp
+	src/Util.hpp
+	src/queue/ListQueue.hpp
+	src/queue/ArrayQueue.hpp
+	src/queue/ListQueue.cpp
+	src/queue/ArrayQueue.cpp
+	src/stack/TwoStackArray.cpp
+	src/stack/TwoStackArray.hpp
+	src/deque/ArrayDeque.cpp
+	src/deque/ArrayDeque.hpp
+	src/queue/TwoStackQueue.cpp
+	src/queue/TwoStackQueue.hpp
+	src/stack/TwoQueueStack.cpp
+	src/stack/TwoQueueStack.hpp
+	src/list/DoublyList.cpp
+	src/list/DoublyList.hpp
+	src/list/SinglyList.cpp
+	src/list/SinglyList.hpp
+	src/list/OnePtrDoublyList.cpp
+	src/list/OnePtrDoublyList.hpp
+	src/memory/MultiMemory.cpp
+	src/memory/MultiMemory.hpp
+	src/memory/SingleMemory.cpp
+	src/memory/SingleMemory.hpp
+	src/memory/StackMemory.cpp
+	src/memory/StackMemory.hpp
+	src/tree/BinaryTree.cpp
+	src/tree/BinaryTree.hpp
+	src/tree/SiblingTree.cpp
+	src/tree/SiblingTree.hpp
+	src/table/BitVector.cpp
+	src/table/BitVector.hpp
+	src/table/DirectList.cpp
+	src/table/DirectList.hpp
+	src/table/HashTable.cpp
+	src/table/HashTable.hpp
+	src/tree/RBTree.cpp src/tree/RBTree.hpp src/math/Math.cpp src/math/Math.hpp src/tree/BTree.cpp src/tree/BTree.hpp src/graph/AdjacencyList.cpp src/graph/AdjacencyList.hpp src/graph/AdjacencyMatrix.cpp src/graph/AdjacencyMatrix.hpp src/graph/adjv.cpp src/graph/adjv.hpp)
 set_target_properties(algorithms PROPERTIES LINKER_LANGUAGE CXX)
 
 target_include_directories(
@@ -83,6 +83,6 @@ target_link_libraries(main algorithms Threads::Threads)
 
 add_executable(
 	hanoi
-	src/hanoi/hanoi.h
-	src/hanoi/hanoi.cpp
+	src/hanoi/Hanoi.hpp
+	src/hanoi/Hanoi.cpp
 )

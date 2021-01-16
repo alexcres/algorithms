@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
-#include "../src/memory/single_memory.h"
-#include "../src/memory/multi_memory.h"
-#include "../src/memory/stack_memory.h"
+#include "../src/memory/SingleMemory.hpp"
+#include "../src/memory/MultiMemory.hpp"
+#include "../src/memory/StackMemory.hpp"
 
 TEST(MemoryTest, single_memory) {
-	single_memory memory;
+	SingleMemory memory;
 	for (int i = 0; i < 4; ++i) {
 		memory.allocate();
 	}
@@ -20,7 +20,7 @@ TEST(MemoryTest, single_memory) {
 }
 
 TEST(MemoryTest, multi_memory) {
-	multi_memory memory;
+	MultiMemory memory;
 	for (int i = 0; i < 4; ++i) {
 		memory.allocate();
 	}
@@ -36,7 +36,7 @@ TEST(MemoryTest, multi_memory) {
 }
 
 TEST(MemoryTest, stack_memory) {
-	stack_memory memory{128};
+	StackMemory memory{128};
 //	EXPECT_EQ(memory.allocate(), 128);
 
 	for (int i = 0; i < 128; ++i) {

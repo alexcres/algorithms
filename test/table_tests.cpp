@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include "../src/table/hash_table.h"
+#include "../src/table/HashTable.hpp"
 
 TEST(TableTest, hash_table) {
-	hash_table table;
+	HashTable table;
 	for (int i = 1; i < 11; ++i) {
 		table.insert(i);
 		EXPECT_EQ(table.search(i), true);

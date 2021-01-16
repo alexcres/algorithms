@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
-#include "../src/stack/array_stack.h"
-#include "../src/stack/list_stack.h"
-#include "../src/stack/smart_list_stack.h"
-#include "../src/stack/two_stack_array.h"
-#include "../src/stack/two_queue_stack.h"
+#include "../src/stack/ArrayStack.hpp"
+#include "../src/stack/ListStack.hpp"
+#include "../src/stack/SmartListStack.hpp"
+#include "../src/stack/TwoStackArray.hpp"
+#include "../src/stack/TwoQueueStack.hpp"
 
 
 //class StackTest : public ::testing::Test {
@@ -21,7 +21,7 @@
 //};
 
 TEST(StackTest, array_stack) {
-	array_stack<int> a_stack;
+	ArrayStack<int> a_stack;
 	for (int i=0; i != 8; ++i) {
 		a_stack.push(i);
 	}
@@ -42,7 +42,7 @@ TEST(StackTest, array_stack) {
 }
 
 TEST(StackTest, list_stack) {
-	list_stack<int> l_stack;
+	ListStack<int> l_stack;
 	for (int i = 0; i != 8; ++i) {
 		l_stack.push(i);
 	}
@@ -50,7 +50,7 @@ TEST(StackTest, list_stack) {
 }
 
 TEST(StackTest, smart_list_stack) {
-	smart_list_stack<int> s_stack;
+	SmartListStack<int> s_stack;
 	for (int i = 0; i < 8; ++i) {
 		s_stack.push(i);
 	}
@@ -58,7 +58,7 @@ TEST(StackTest, smart_list_stack) {
 }
 
 TEST(StackTest, two_stack_array) {
-	two_stack_array stack{8};
+	TwoStackArray stack{8};
 	// fill stack
 	for (int i = 0; i < 4; ++i) {
 		stack.push(i+1);
@@ -73,7 +73,7 @@ TEST(StackTest, two_stack_array) {
 }
 
 TEST(StackTest, two_queue_stack) {
-	two_queue_stack s_stack;
+	TwoQueueStack s_stack;
 	for (int i = 0; i < 8; ++i) {
 		s_stack.push(i);
 	}

@@ -1,26 +1,26 @@
 #include <gtest/gtest.h>
-#include "../src/list/doubly_list.h"
-#include "../src/list/singly_list.h"
-#include "../src/list/one_ptr_doubly_list.h"
+#include "../src/list/DoublyList.hpp"
+#include "../src/list/SinglyList.hpp"
+#include "../src/list/OnePtrDoublyList.hpp"
 
 
 TEST(ListTest, DoublyList) {
 	// only test memory leak
 
-	doubly_list list;
+	DoublyList list;
 	//init
 	for (int i = 0; i < 8; ++i) {
 		list.push_head(i + 1);
 	}
 
 	for (int i = 0; i < 8; ++i) {
-		doubly_list::node *target = list.find(i + 1);
+		DoublyList::node *target = list.find(i + 1);
 		list.remove(target);
 	}
 }
 
 TEST(ListTest, SinglyList) {
-	singly_list list;
+	SinglyList list;
 	//init
 	for (int i = 0; i < 4; ++i) {
 		list.push_head(i + 1);
@@ -41,7 +41,7 @@ TEST(ListTest, SinglyList) {
 TEST(ListTest, one_ptr_doubly_list) {
 // only test memory leak
 
-	one_ptr_doubly_list list;
+	OnePtrDoublyList list;
 	//init
 	for (int i = 0; i < 8; ++i) {
 		list.push_head(i + 1);

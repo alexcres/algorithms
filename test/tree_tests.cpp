@@ -1,23 +1,23 @@
 #include <gtest/gtest.h>
-#include "../src/tree/binary_tree.h"
-#include "../src/tree/rb_tree.h"
-#include "../src/tree/b_tree.h"
+#include "../src/tree/BinaryTree.hpp"
+#include "../src/tree/RBTree.hpp"
+#include "../src/tree/BTree.hpp"
 
 
 TEST(TreeTest, BinaryTree) {
-	binary_tree tree;
+	BinaryTree tree;
 }
 
 TEST(TreeTest, rb_tree) {
-	rb_tree tree;
+	RBTree tree;
 	for (int i = 1; i < 5; ++i) {
-		auto node = new rb_tree::node(i);
+		auto node = new RBTree::node(i);
 		tree.insert(node);
 	}
 }
 
 TEST(TreeTest, b_tree) {
-	b_tree tree{5};
+	BTree tree{5};
 	for (int i = 0; i < 100; ++i) {
 		tree.insert(i+1);
 	}
